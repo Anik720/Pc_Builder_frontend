@@ -10,8 +10,16 @@ const { Header, Content, Footer } = Layout;
 
 import Link from "next/link";
 import DropDown from "../shared/DropDown";
+import { signOut, useSession } from "next-auth/react";
 
 const RootLayout = ({ children }) => {
+  const { data: session } = useSession();
+
+  console.log(19, session);
+
+  const handleLogout = () => {
+    signOut();
+  };
   return (
     <Layout>
       <Header
@@ -25,11 +33,10 @@ const RootLayout = ({ children }) => {
             <Button
               style={{
                 color: "white",
-       
               }}
             >
               {" "}
-              Homee
+              Home
             </Button>
           </Link>
 
@@ -55,6 +62,31 @@ const RootLayout = ({ children }) => {
               Pc Builder
             </Button>
           </Link>
+          {session?.user?.email ? (
+            <Button
+              style={{
+                color: "white",
+
+                borderRadius: "3px",
+              }}
+              onClick={handleLogout}
+            >
+              Logout
+            </Button>
+          ) : (
+            <Link href="/Login/Login">
+              <Button
+                style={{
+                  color: "white",
+
+                  borderRadius: "3px",
+                }}
+              >
+                Login
+              </Button>
+            </Link>
+          )}
+         
         </Menu>
       </Header>
 
