@@ -3,7 +3,7 @@ import PcCard from "@/components/shared/Card";
 import React from "react";
 
 const Monitor = ({ product }) => {
-  console.log(10, product);
+
   return (
     <div>
       <h1 className="text-xl text-center font-bold mb-20">Category Monitor</h1>
