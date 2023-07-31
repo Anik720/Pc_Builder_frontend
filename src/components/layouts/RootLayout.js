@@ -47,7 +47,7 @@ const RootLayout = ({ children }) => {
               borderRadius: "3px",
             }}
           >
-            <DropDown name={"Categories dropdown"}></DropDown>
+            <DropDown name={"Categories"}></DropDown>
           </div>
         </div>
         <Menu theme="dark" mode="vertical">

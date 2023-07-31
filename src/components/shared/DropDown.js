@@ -11,71 +11,30 @@ const items = [
   {
     key: "2",
     label: <Link href="/builder/Motherboard/Motherboard">MotherBoard</Link>,
-
   },
   {
     key: "3",
-    label: (
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.luohanacademy.com"
-      >
-        RAM
-      </a>
-    ),
+    label: <Link href="/builder/RAM">RAM</Link>,
     disabled: false,
   },
   {
     key: "4",
-    label: (
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.luohanacademy.com"
-      >
-        Power Supply Unit
-      </a>
-    ),
+    label: <Link href="/builder/PowerSupply">Power Supply Unit</Link>,
     disabled: false,
   },
   {
     key: "5",
-    label: (
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.luohanacademy.com"
-      >
-        Storage Device
-      </a>
-    ),
+    label: <Link href="/builder/StorageDevice">Storage Device</Link>,
     disabled: false,
   },
   {
     key: "6",
-    label: (
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.luohanacademy.com"
-      >
-        Monitor
-      </a>
-    ),
+    label: <Link href="/builder/Monitor">Monitor</Link>,
     disabled: false,
   },
   {
     key: "7",
-    label: (
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.luohanacademy.com"
-      >
-        Others
-      </a>
-    ),
+    label: <Link href="/builder/Others">Others</Link>,
     disabled: false,
   },
 ];
