@@ -10,11 +10,21 @@ import { useDispatch } from "react-redux";
 import { setBuildProducts } from "@/redux/features/builder/builderSlice";
 import Image from "next/image";
 import intel from "../../../public/images/KaMA6u.jpg";
+import monitor from "../../../public/images/monitor.jpg";
+import cpu from "../../../public/images/cpu.webp";
+import motherboard from "../../../public/images/motherboard.jpg";
+import ram from "../../../public/images/ram.jpg";
+import { ToastContainer, toast } from "react-toastify";
 const { Meta } = Card;
-const PcCard = ({ pc, key }) => {
+const PcCard = ({ pc, key, image, id }) => {
   const dispatch = useDispatch();
-
+  const handleAddBuilder = () => {
+    dispatch(setBuildProducts(pc));
+    toast("Added to the builder list!");
+    
+  };
   return (
+    <>
     <Card
       className="bg-gray-200 "
       style={{
@@ -22,18 +32,14 @@ const PcCard = ({ pc, key }) => {
       }}
       cover={
         <Image
-          src={intel}
+          src={image ? image : intel}
           alt="Motherboard"
           width={300} // Set the width of the image
           height={300} // Set the height of the image
         />
       }
       actions={[
-        <Fragment key="setting">
-          {" "}
-          {/* Use Fragment and provide a unique key */}
-          <SettingOutlined />
-        </Fragment>,
+       
 
         <Fragment key="details">
           {" "}
@@ -46,9 +52,11 @@ const PcCard = ({ pc, key }) => {
         <Fragment key="add-to-builder">
           {" "}
           {/* Use Fragment and provide a unique key */}
-          <Button onClick={() => dispatch(setBuildProducts(pc))}>
-            Add to builder
-          </Button>
+          {id ? (
+            <Button onClick={() => handleAddBuilder()} >AddBuilder</Button>
+          ) : (
+            ""
+          )}
         </Fragment>,
       ]}
     >
@@ -65,7 +73,10 @@ const PcCard = ({ pc, key }) => {
         <p>Status: ${pc.status}</p>
         <p>Rating: ${pc.rating}</p>
       </div>
+     
     </Card>
+    <ToastContainer />
+    </>
   );
 };
 export default PcCard;

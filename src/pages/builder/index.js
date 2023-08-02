@@ -13,6 +13,7 @@ const PcBuilder = ({}) => {
 
   const allCPU = builder?.products.filter((item) => item.category === "CPU");
   const allRAM = builder?.products.filter((item) => item.category === "RAM");
+  const allMonitor = builder?.products.filter((item) => item.category === "Monitor");
   const allMotherboard = builder?.products.filter(
     (item) => item.category === "Motherboard"
   );
@@ -111,6 +112,38 @@ const PcBuilder = ({}) => {
               ))
             ) : (
               <p>No RAM found.</p>
+            )}
+          </div>
+        </Card>
+        <Card type="inner" title="RAM">
+          <div
+            className="flex justify-between bg-gray-500 p-5 mb-10"
+            style={{ borderRadius: "20px" }}
+          >
+            <div>
+              <h1 className="text-xl font-bold">Monitor</h1>
+            </div>
+            <div>
+              <Link href="/builder/Monitor">
+                <Button style={{ color: "white" }}>Choose</Button>
+              </Link>
+            </div>
+          </div>
+
+          <div className="flex gap-5">
+            {allMonitor?.length ? (
+              allRAM.map((item, index) => (
+                <div className="flex gap-20" key={index}>
+                  <div>
+                    <Image src={intel} width={100} height={100} />
+                  </div>
+                  <div>
+                    <h1>{item.productName}</h1>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <p>No Monitor found.</p>
             )}
           </div>
         </Card>

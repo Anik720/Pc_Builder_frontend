@@ -8,8 +8,8 @@ const PowerSupply = ({ product }) => {
     <div>
       <h1 className="text-xl text-center font-bold mb-20">Category Power Supply Unit</h1>
       <div className="flex gap-5 flex-wrap">
-        {product.map((item,index) => (
-          <PcCard key={index} pc={item} ></PcCard>
+        {product?.map((item,index) => (
+          <PcCard key={index} pc={item} id={true}></PcCard>
         ))}
       </div>
     </div>

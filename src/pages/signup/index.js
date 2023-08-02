@@ -5,25 +5,23 @@ import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { signIn } from "next-auth/react";
 import RootLayout from "@/components/layouts/RootLayout";
 import Link from "next/link";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "@/firebase/firebase.auth";
-import { useRouter } from "next/router";
-const LoginForm = () => {
+
+const SignupForm = () => {
   const {
     control,
     handleSubmit,
     formState: { errors },
   } = useForm();
   const [loading, setLoading] = useState(false);
-  const [signInWithEmailAndPassword, user, firebaseloading, error] =
-    useSignInWithEmailAndPassword(auth);
-
-  const router = useRouter();
+  const [createUserWithEmailAndPassword, user, Firebaseloading, error] =
+    useCreateUserWithEmailAndPassword(auth);
   const onSubmit = async (data) => {
+    console.log(23, data);
     setLoading(true);
-
     try {
-      signInWithEmailAndPassword(data.email, data.password);
+      createUserWithEmailAndPassword(data.email, data.password)
       // Handle successful login here
     } catch (error) {
       console.error("Login failed", error);
@@ -31,9 +29,7 @@ const LoginForm = () => {
       setLoading(false);
     }
   };
-  if (user) {
-    router.push("/");
-  }
+
   return (
     <div className="flex justify-center items-center bg-gray-200 w-full h-screen">
       <Form
@@ -98,7 +94,7 @@ const LoginForm = () => {
             block
             style={{ background: "blue" }}
           >
-            Log in
+            Signup up
           </Button>
         </Form.Item>
 
@@ -112,7 +108,7 @@ const LoginForm = () => {
           onClick={() => signIn("google")}
           style={{ background: "blue" }}
         >
-          Log in with Google
+          Sign up with Google
         </Button>
 
         {/* For GitHub login */}
@@ -122,17 +118,17 @@ const LoginForm = () => {
           onClick={() => signIn("github")}
           style={{ background: "blue", marginTop: "10px" }}
         >
-          Log in with GitHub
+          sign up with GitHub
         </Button>
-        <Link href="/signup">
-          <p>Don't have an account? Sign up here...</p>
+        <Link href="/Login/Login">
+          <p>Already have an account? Login here...</p>
         </Link>
       </Form>
     </div>
   );
 };
 
-export default LoginForm;
-LoginForm.getLayout = function getLayout(page) {
+export default SignupForm;
+SignupForm.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };

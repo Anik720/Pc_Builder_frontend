@@ -1,15 +1,15 @@
 import RootLayout from "@/components/layouts/RootLayout";
 import PcCard from "@/components/shared/Card";
 import React from "react";
-
+import monitor from "../../../../public/images/monitor.jpg";
 const Monitor = ({ product }) => {
 
   return (
     <div>
       <h1 className="text-xl text-center font-bold mb-20">Category Monitor</h1>
       <div className="flex gap-5 flex-wrap">
-        {product.map((item,index) => (
-          <PcCard key={index} pc={item} ></PcCard>
+        {product?.map((item,index) => (
+          <PcCard key={index} pc={item} image={monitor} id={true}></PcCard>
         ))}
       </div>
     </div>

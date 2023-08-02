@@ -1,7 +1,7 @@
 import RootLayout from "@/components/layouts/RootLayout";
 import Head from "next/head";
 import AllPc from "./AllPcs/AllPc";
-
+import 'react-toastify/dist/ReactToastify.css';
 export default function Home({ allPcs }) {
 
   // const randaomPc=
