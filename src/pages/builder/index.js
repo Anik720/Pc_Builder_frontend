@@ -12,6 +12,7 @@ const PcBuilder = ({}) => {
   console.log(10, builder);
 
   const allCPU = builder?.products.filter((item) => item.category === "CPU");
+  const allRAM = builder?.products.filter((item) => item.category === "RAM");
   const allMotherboard = builder?.products.filter(
     (item) => item.category === "Motherboard"
   );
@@ -78,6 +79,38 @@ const PcBuilder = ({}) => {
               ))
             ) : (
               <p>No motherboards found.</p>
+            )}
+          </div>
+        </Card>
+        <Card type="inner" title="RAM">
+          <div
+            className="flex justify-between bg-gray-500 p-5 mb-10"
+            style={{ borderRadius: "20px" }}
+          >
+            <div>
+              <h1 className="text-xl font-bold">RAM</h1>
+            </div>
+            <div>
+              <Link href="/builder/RAM">
+                <Button style={{ color: "white" }}>Choose</Button>
+              </Link>
+            </div>
+          </div>
+
+          <div className="flex gap-5">
+            {allRAM?.length ? (
+              allRAM.map((item, index) => (
+                <div className="flex gap-20" key={index}>
+                  <div>
+                    <Image src={intel} width={100} height={100} />
+                  </div>
+                  <div>
+                    <h1>{item.productName}</h1>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <p>No RAM found.</p>
             )}
           </div>
         </Card>

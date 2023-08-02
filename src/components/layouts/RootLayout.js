@@ -36,7 +36,7 @@ const RootLayout = ({ children }) => {
               }}
             >
               {" "}
-              Home
+              Homee
             </Button>
           </Link>
 

@@ -3,6 +3,8 @@ import Head from "next/head";
 import AllPc from "./AllPcs/AllPc";
 
 export default function Home({ allPcs }) {
+
+  // const randaomPc=
   return (
     <div>
       <Head>

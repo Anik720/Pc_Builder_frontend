@@ -54,7 +54,7 @@ const PcCard = ({ pc, key }) => {
     >
       <Meta
         avatar={<Avatar src={pc.image} />}
-        title={pc.productName}
+        title={`Product Name: ${pc.productName}`}
         description={`Category: ${pc.category}`}
       />
       <div
