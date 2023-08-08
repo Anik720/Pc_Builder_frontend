@@ -7,6 +7,10 @@ import { useSelector } from "react-redux";
 import Image from "next/image";
 
 import intel from "../../../public/images/KaMA6u.jpg";
+import monitor from "../../../public/images/monitor.jpg";
+import cpu from "../../../public/images/cpu.webp";
+import motherboard from "../../../public/images/motherboard.jpg";
+import ram from "../../../public/images/ram.jpg";
 import { ToastContainer, toast } from "react-toastify";
 const PcBuilder = ({}) => {
   const builder = useSelector((state) => state.builder);
@@ -56,7 +60,7 @@ const PcBuilder = ({}) => {
                 allCPU.map((item, index) => (
                   <div className="flex gap-20" key={index}>
                     <div>
-                      <Image src={intel} width={100} height={100} />
+                      <Image src={cpu} width={100} height={100} />
                     </div>
                     <div>
                       <h1>{item.productName}</h1>
@@ -87,7 +91,7 @@ const PcBuilder = ({}) => {
                 allMotherboard.map((item, index) => (
                   <div className="flex gap-20" key={index}>
                     <div>
-                      <Image src={intel} width={100} height={100} />
+                      <Image src={motherboard} width={100} height={100} />
                     </div>
                     <div>
                       <h1>{item.productName}</h1>
@@ -121,7 +125,7 @@ const PcBuilder = ({}) => {
                 allRAM.map((item, index) => (
                   <div className="flex gap-20" key={index}>
                     <div>
-                      <Image src={intel} width={100} height={100} />
+                      <Image src={ram} width={100} height={100} />
                     </div>
                     <div>
                       <h1>{item.productName}</h1>
@@ -155,7 +159,7 @@ const PcBuilder = ({}) => {
                 allMonitor.map((item, index) => (
                   <div className="flex gap-20" key={index}>
                     <div>
-                      <Image src={intel} width={100} height={100} />
+                      <Image src={monitor} width={100} height={100} />
                     </div>
                     <div>
                       <h1>{item.productName}</h1>
@@ -273,11 +277,16 @@ const PcBuilder = ({}) => {
       </div>
 
       <div className="flex justify-end mr-[200px] my-10">
-        <Button style={{background:"black",color:"white"}} onClick={()=>{
-          toast("Complted pc Building")
-        }}>Complete Pc Building</Button>
+        <Button
+          style={{ background: "black", color: "white" }}
+          onClick={() => {
+            toast("Complted pc Building");
+          }}
+        >
+          Complete Pc Building
+        </Button>
       </div>
-      <ToastContainer/>
+      <ToastContainer />
     </div>
   );
 };
