@@ -4,7 +4,6 @@ import AllPc from "./AllPcs/AllPc";
 import 'react-toastify/dist/ReactToastify.css';
 export default function Home({ allPcs }) {
 
-  // const randaomPc=
   return (
     <div>
       <Head>

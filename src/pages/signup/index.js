@@ -21,7 +21,7 @@ const SignupForm = () => {
     console.log(23, data);
     setLoading(true);
     try {
-      createUserWithEmailAndPassword(data.email, data.password)
+      createUserWithEmailAndPassword(data.email, data.password);
       // Handle successful login here
     } catch (error) {
       console.error("Login failed", error);
@@ -102,14 +102,6 @@ const SignupForm = () => {
 
         {/* Add social login buttons here */}
         {/* For Google login */}
-        <Button
-          type="primary"
-          block
-          onClick={() => signIn("google")}
-          style={{ background: "blue" }}
-        >
-          Sign up with Google
-        </Button>
 
         {/* For GitHub login */}
         <Button

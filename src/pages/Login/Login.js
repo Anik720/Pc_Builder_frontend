@@ -106,14 +106,6 @@ const LoginForm = () => {
 
         {/* Add social login buttons here */}
         {/* For Google login */}
-        <Button
-          type="primary"
-          block
-          onClick={() => signIn("google")}
-          style={{ background: "blue" }}
-        >
-          Log in with Google
-        </Button>
 
         {/* For GitHub login */}
         <Button

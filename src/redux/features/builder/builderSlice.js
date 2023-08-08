@@ -9,14 +9,8 @@ const builderSlice = createSlice({
   initialState,
   reducers: {
     setBuildProducts: (state, action) => {
-      console.log(12, state.products);
-      console.log(13, action.payload);
-
       state.products = [...state.products, action.payload];
     },
-    // setLoading: (state, action: PayloadAction<boolean>) => {
-    //   state.isLoading = action.payload;
-    // },
   },
   extraReducers: () => {},
 });

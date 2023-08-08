@@ -19,6 +19,7 @@ const { Meta } = Card;
 const PcCard = ({ pc, key, image, id }) => {
   const dispatch = useDispatch();
   const handleAddBuilder = () => {
+ 
     dispatch(setBuildProducts(pc));
     toast("Added to the builder list!");
     
